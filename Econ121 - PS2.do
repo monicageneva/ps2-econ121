@@ -12,4 +12,4 @@ summarize
 
 twoway (kdensity mort5 if healthstatus==1,bw(.07) lcolor(pink)) ///
        (kdensity mort5 if healthstatus==0,bw(.07) lcolor(blue)) ///
-	   , legend(label(1 "Fair/Poor") label(0 "Other"))
+	   , legend(label(1 "Fair/Poor") label(2 "Other"))
