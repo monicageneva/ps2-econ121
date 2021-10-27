@@ -25,10 +25,7 @@ drop if famincs==.
 graph bar mort5 healthstatus,over(famincs) 
 
 *part b
-gen var lt_hs = (edyrs < 12)
-graph bar mort5 healthstatus,over(edyrs)
 
-(maybe?) 
 recode edyrs (1/11=1 "lessthanhs") (12=2 "hs") (13/15=3 "somecllg") (16=4 "cllg") (17/40=5 "postgrad"), gen(edyr) label(edyr) 
 graph bar mort5 healthstatus, over(edyr)
 
