@@ -30,13 +30,13 @@ graph bar mort5 healthstatus,over(famincs)
 gen var lt_hs = (edyrs < 12)
 graph bar mort5 healthstatus,over(edyrs)
 
+// Question 4
 gen male = 2 - sex
 gen hsgrad = (edyrs >= 12 & edyrs < 16)
 gen collegegrad = (edyrs >= 16)
 gen seniorage = (age >= 65)
 gen adultage = (age >= 21 & age < 65)
 
-// Question 4
 // Linear Probability Models:
 reg mort5 age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
 reg healthstatus age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
