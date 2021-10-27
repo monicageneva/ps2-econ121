@@ -29,3 +29,26 @@ graph bar mort5 healthstatus,over(famincs)
 *part b
 gen var lt_hs = (edyrs < 12)
 graph bar mort5 healthstatus,over(edyrs)
+
+gen male = 2 - sex
+gen hsgrad = (edyrs >= 12 & edyrs < 16)
+gen collegegrad = (edyrs >= 16)
+gen seniorage = (age >= 65)
+gen adultage = (age >= 21 & age < 65)
+
+// Question 4
+// Linear Probability Models:
+reg mort5 age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
+reg healthstatus age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
+
+// Probit Models:
+probit mort5 age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
+margins, dydx(*)
+probit healthstatus age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
+margins, dydx(*)
+
+// Logit Models:
+logit mort5 age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
+mfx compute
+logit healthstatus age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
+mfx compute
