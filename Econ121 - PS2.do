@@ -15,7 +15,7 @@ twoway (lpoly mort5 age if healthstatus==1, degree(1) bw(1) lcolor(pink)) ///
 
 *Question 3
 
-*part a
+//part a
 gen faminc_lt20 = (faminc_gt75 == 0 & faminc_20t75 == 0)
 gen famincs=0 if faminc_lt20==1
 replace famincs =1 if faminc_20t75==1
@@ -24,12 +24,12 @@ drop if famincs==.
 
 graph bar mort5 healthstatus,over(famincs) 
 
-*part b
+//part b
 recode edyrs (1/11=1 "lt_highschool") (12=2 "highschool") (13/15=3 "some_college") (16=4 "college") (17/40=5 "postgrad"), gen(edyr) label(edyr) 
 graph bar mort5 healthstatus, over(edyr)
 
 
-// Question 4
+*Question 4
 gen male = 2 - sex
 gen hsgrad = (edyrs >= 12 & edyrs < 16)
 gen collegegrad = (edyrs >= 16)
@@ -51,3 +51,5 @@ logit mort5 age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black his
 mfx compute
 logit healthstatus age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
 mfx compute
+
+*Question 5 : hello connor ;)
