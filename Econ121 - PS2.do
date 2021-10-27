@@ -25,9 +25,9 @@ drop if famincs==.
 graph bar mort5 healthstatus,over(famincs) 
 
 *part b
-
-recode edyrs (1/11=1 "lessthanhs") (12=2 "hs") (13/15=3 "somecllg") (16=4 "cllg") (17/40=5 "postgrad"), gen(edyr) label(edyr) 
+recode edyrs (1/11=1 "lt_highschool") (12=2 "highschool") (13/15=3 "some_college") (16=4 "college") (17/40=5 "postgrad"), gen(edyr) label(edyr) 
 graph bar mort5 healthstatus, over(edyr)
+
 
 // Question 4
 gen male = 2 - sex
