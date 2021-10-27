@@ -17,9 +17,9 @@ twoway (lpoly mort5 age if healthstatus==1, degree(1) bw(1) lcolor(pink)) ///
 
 *part a
 gen faminc_lt20 = (faminc_gt75 == 0 & faminc_20t75 == 0)
-gen famincs=1 if faminc_lt20==1
-replace famincs =2 if faminc_20t75==1
-replace famincs =3 if faminc_gt75==1
+gen famincs=0 if faminc_lt20==1
+replace famincs =1 if faminc_20t75==1
+replace famincs =2 if faminc_gt75==1
 drop if famincs==.
 
 graph bar mort5 healthstatus,over(famincs) 
