@@ -55,9 +55,11 @@ mfx compute
 
 *Question 5 :
 
-di -1.379686 + .3186471
+// We used the LPM estimates when comparing mortality risks between high-income African-Americans and low-income whites:
+di  -.0626184 +  -.001993 
 
 *Question 7 :
 
-reg uninsured age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
+reg mort5 uninsured alc5upyr smokev vig10fwk marstat age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
+reg healthstatus uninsured alc5upyr smokev vig10fwk marstat age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
 
