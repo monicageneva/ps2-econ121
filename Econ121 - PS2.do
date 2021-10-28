@@ -57,5 +57,5 @@ di -1.379686 + .3186471
 
 *Question 7 :
 
-reg uninsured age hsgrad collegegrad famincs male white black hisp other, r
+reg uninsured age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
 
