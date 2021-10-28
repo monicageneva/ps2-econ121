@@ -52,4 +52,21 @@ mfx compute
 logit healthstatus age hsgrad collegegrad faminc_20t75 faminc_gt75 male white black hisp other, r
 mfx compute
 
+*suggestions 
+// Linear Probability Models:
+reg mort5 age hsgrad collegegrad faminc_lt20 faminc_gt75 male white black hisp, r
+reg healthstatus age hsgrad collegegrad faminc_lt20 faminc_gt75 male white black hisp, r
+
+// Probit Models:
+probit mort5 age hsgrad collegegrad faminc_lt20 faminc_gt75 male white black hisp, r
+margins, dydx(*)
+probit healthstatus age hsgrad collegegrad faminc_lt20 faminc_gt75 male white black hisp, r
+margins, dydx(*)
+
+// Logit Models:
+logit mort5 age hsgrad collegegrad faminc_lt20 faminc_gt75 male white black hisp, r
+mfx compute
+logit healthstatus age hsgrad collegegrad faminc_lt20 faminc_gt75 male white black hisp, r
+mfx compute
+
 *Question 5 : hello connor ;)
