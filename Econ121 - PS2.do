@@ -54,3 +54,8 @@ mfx compute
 *Question 5 :
 
 di -1.379686 + .3186471
+
+*Question 7 :
+
+probit uninsured age hsgrad collegegrad famincs male white black hisp other, r
+
