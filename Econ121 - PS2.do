@@ -69,4 +69,6 @@ mfx compute
 logit healthstatus age hsgrad collegegrad faminc_lt20 faminc_gt75 male white black hisp, r
 mfx compute
 
-*Question 5 : hello connor ;)
+*Question 5 :
+
+di -1.379686 + .3186471
