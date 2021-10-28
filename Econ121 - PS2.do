@@ -22,7 +22,9 @@ replace famincs =1 if faminc_20t75==1
 replace famincs =2 if faminc_gt75==1
 drop if famincs==.
 
-graph bar mort5 healthstatus,over(famincs) 
+label define famincs_lbl 0 "<20k" 1 "20k-75k" 2 ">75k"
+label values famincs famincs_lbl
+graph bar mort5 healthstatus,over(famincs) legend(label(1 "5-Year Mortality") label(2 "Fair/Poor Health Condition"))
 
 //part b
 recode edyrs (1/11=1 "lt_highschool") (12=2 "highschool") (13/15=3 "some_college") (16=4 "college") (17/40=5 "postgrad"), gen(edyr) label(edyr) 
